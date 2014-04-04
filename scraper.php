@@ -5,7 +5,11 @@ $iplSeries="2012";
 //$html_content= scraperWiki::scrape("http://www.thatscricket.com/indian-premier-league/".$iplSeries."/");
 //ScraperWiki::attach("sqads", "src");
 //$playerIds=scraperwiki::select("distinct player_id from src.data desc");
- $playerIds=R::getCol('select player_id from swdata');
+//https://api.morph.io/pradeepkumargali/sqads/data.json?key=Fd0392exZDTVMy1Rb1PZ&query=select%20player_id%20from%20data 
+$json_content_squads= scraperWiki::scrape("https://api.morph.io/pradeepkumargali/sqads/data.json?key=Fd0392exZDTVMy1Rb1PZ&query=select%20player_id%20from%20data");
+$playerIds=json_decode($json_content_squads,true); 
+
+
 foreach($playerIds as $playerid){
 
 //Carrer Stats http://dynamic.pulselive.com/test/data/core/cricket/careerStats/1_careerStats.js?_1363343668516=
