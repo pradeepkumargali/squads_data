@@ -5,7 +5,7 @@ $iplSeries="2012";
 //$html_content= scraperWiki::scrape("http://www.thatscricket.com/indian-premier-league/".$iplSeries."/");
 //ScraperWiki::attach("sqads", "src");
 //$playerIds=scraperwiki::select("distinct player_id from src.data desc");
-$playerIds=scraperwiki:get_var("player_id");
+ $playerIds=R::getCol('select title from page');
 foreach($playerIds as $playerid){
 
 //Carrer Stats http://dynamic.pulselive.com/test/data/core/cricket/careerStats/1_careerStats.js?_1363343668516=
